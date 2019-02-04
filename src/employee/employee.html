@@ -1,0 +1,92 @@
+    <html>
+		<head>
+			<style>
+				label{
+    display:block;
+    }
+.labels{
+    margin-bottom:20px;
+    }
+    #address{
+    width:170px;
+    }
+    .checkbox{
+    display:block;
+    }
+    
+    
+    .inline{
+    display:inline;
+    }
+				</style>
+		</head>
+		<body>
+	<form #form="ngForm">
+	<div class="labels">
+		<label>First Name:</label>
+		<input  type="text" id="First_name" name="First_name" [(ngModel)]="obj.First_name">
+	</div>
+	<div class="labels">
+		<label>Last Name:</label>
+		<input class type="text" id="last_name" name="Last_name" [(ngModel)]="obj.Last_name">
+	</div>
+	<div class="labels">
+		<label>Email:</label>
+		<input type="email" id="email" name="Email" [(ngModel)]="obj.Email">
+	</div>
+	<div class="labels">
+		<label>Contact Number:</label>
+		<input type="text"  maxlength="10" id="contact_number" name="Contact" [(ngModel)]="obj.Contact">
+	</div>
+	<div class="labels">
+		<label>Address:</label>
+		<textarea id="address" rows="3"  cols="20" name="Address" [(ngModel)]="obj.Address"></textarea>
+	</div>
+	<div class="labels">
+		<label>User Name:</label>
+		<input type="text" id="user_name" name="Username" [(ngModel)]="obj.Username">
+	</div>
+	<div class="labels">
+		<label>Password:</label>
+		<input type="Password" id="password" name="Password" [(ngModel)]="obj.Password">
+	</div>
+	<div class="labels">
+		<label>Gender:</label>
+		<input  type="radio" class="radio" id="Male" value="Male" name="gender" [(ngModel)]="obj.gender"><label class="inline">Male</label>
+		<input type="radio" class="radio" id="Female" value="Female" name="gender" [(ngModel)]="obj.gender"><label class="inline">Female</label>
+	</div>
+	<div class="labels">
+		<label>Qualification:</label>                                     
+		<select id="Qualist" name="qual" [(ngModel)]="obj.qual">
+			<option *ngFor="let q of qual" >{{q}}</option>
+			
+		</select>
+		
+		</div>
+	<div class="labels">
+		<label>Experience:</label>
+		<select id="EXP" name="exp" [(ngModel)]="obj.exp" >
+			<option *ngFor="let e of exp">{{e}}</option>
+		</select>
+		
+		</div>
+	<div class="labels">
+		<label>Coding Languages:</label>
+		<div *ngFor="let l of lang">
+		<input type="checkbox" class="checkbox" (change)="checked(l,$event)" >{{l}}
+		</div>
+		
+			
+
+	</div>
+		<div>                                       
+		
+			<button type="Submit" (click)="toSend()" >Submit</button>
+				
+		</div>
+	</form>
+	</body>
+	</html>
+
+
+			
